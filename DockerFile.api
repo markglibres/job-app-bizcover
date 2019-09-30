@@ -5,9 +5,10 @@ COPY ./src/ /app
 COPY ./tests/ /tests
 COPY ./packages/ /packages
 
-RUN dotnet test /tests/BizCover.Api.Cars.Unit.Tests
 RUN dotnet restore /app/BizCover.Api.Cars/BizCover.Api.Cars.csproj
 RUN dotnet publish /app/BizCover.Api.Cars/BizCover.Api.Cars.csproj -o /app/src/publish
+
+RUN dotnet test /tests/BizCover.Api.Cars.Unit.Tests
 
 FROM microsoft/dotnet:2.2-aspnetcore-runtime
 WORKDIR /app
