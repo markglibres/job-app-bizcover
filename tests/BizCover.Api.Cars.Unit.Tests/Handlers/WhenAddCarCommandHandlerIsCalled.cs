@@ -23,16 +23,9 @@ namespace BizCover.Api.Cars.Unit.Tests.Handlers
         protected override void Arrange()
         {
             base.Arrange();
-            _newCar = new Car
-            {
-                Id = (new Random()).Next(1,100),
-                Make = "Ford",
-                Model = "Expedition",
-                Year = 2012,
-                Price = (decimal)50000.00,
-                Colour = "Maroon",
-                CountryManufactured = "US"
-            };
+            _newCar = Fixture.Create<Car>();
+            _newCar.Year = (new Random()).Next(1908, DateTime.Now.Year);
+
             _mockCarService = Fixture.Freeze<Mock<ICarService>>();
             _mockCarService.Setup(s => s.AddCar(It.IsAny<Car>()))
                 .ReturnsAsync(_newCar);

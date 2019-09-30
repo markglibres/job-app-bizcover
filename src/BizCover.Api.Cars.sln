@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\docker-compose-test.yml = ..\docker-compose-test.yml
 		..\DockerFile.api = ..\DockerFile.api
 		..\DockerFile.integration = ..\DockerFile.integration
-		..\readme.md = ..\readme.md
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Application", "BizCover.Api.Cars.Application\BizCover.Api.Cars.Application.csproj", "{FDA6CC9C-61D8-4EE9-8401-B7A54F9453FC}"

@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\BizCover.Api.Cars\BizCover.Api.Cars.csproj" />
     <ProjectReference Include="..\BizCover.Api.Cars.Tests\BizCover.Api.Cars.Tests.csproj" />
   </ItemGroup>
 

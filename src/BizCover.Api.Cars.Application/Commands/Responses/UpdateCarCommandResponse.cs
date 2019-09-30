@@ -2,7 +2,8 @@
 
 namespace BizCover.Api.Cars.Application.Commands.Responses
 {
-    public class UpdateCarCommandResponse : CarDto
+    public class UpdateCarCommandResponse
     {
+        
     }
 }

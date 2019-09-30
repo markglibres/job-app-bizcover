@@ -10,6 +10,7 @@ namespace BizCover.Api.Cars.Application.Mappers
         public CarMapperProfile()
         {
             CreateMap<AddCarCommand, Car>();
+            CreateMap<UpdateCarCommand, Car>();
             CreateMap<Car, AddCarCommandResponse>();
         }
     }

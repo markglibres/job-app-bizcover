@@ -1,8 +1,10 @@
-﻿using System.Dynamic;
+﻿using System;
+using System.Dynamic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using BizCover.Api.Cars.Integration.Tests.Dtos;
+using AutoFixture;
+using BizCover.Api.Cars.Dtos.Requests;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using NUnit.Framework;
@@ -17,15 +19,8 @@ namespace BizCover.Api.Cars.Integration.Tests.Seedwork
         protected override void Arrange()
         {
             base.Arrange();
-            _carToAdd = new AddCarRequest
-            {
-                Make = "Ford",
-                Model = "Expedition",
-                Year = 2012,
-                Price = (decimal) 50000.00,
-                Colour = "Maroon",
-                CountryManufactured = "US"
-            };
+            _carToAdd = Fixture.Create<AddCarRequest>();
+            _carToAdd.Year = (new Random()).Next(1908, DateTime.Now.Year);
         }
 
         protected override async Task ActAsync()
@@ -45,7 +40,8 @@ namespace BizCover.Api.Cars.Integration.Tests.Seedwork
         public async Task Should_Return_Car_Id()
         {
             var responseString = await _carAddedResult.Content.ReadAsStringAsync();
-            dynamic response = JsonConvert.DeserializeObject<ExpandoObject>(responseString, new ExpandoObjectConverter());
+            dynamic response =
+                JsonConvert.DeserializeObject<ExpandoObject>(responseString, new ExpandoObjectConverter());
             Assert.IsAssignableFrom<long>(response.id);
         }
     }

@@ -9,6 +9,8 @@ namespace BizCover.Api.Cars.Mappers
         public RequestToCommandMapperProfile()
         {
             CreateMap<AddCarRequest, AddCarCommand>();
+            CreateMap<UpdateCarRequest, UpdateCarCommand>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
         }
     }
 }

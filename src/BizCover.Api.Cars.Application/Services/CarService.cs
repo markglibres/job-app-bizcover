@@ -20,5 +20,10 @@ namespace BizCover.Api.Cars.Application.Services
 
             return car;
         }
+
+        public async Task Update(Car car)
+        {
+            await _carRepository.Update(car);
+        }
     }
 }

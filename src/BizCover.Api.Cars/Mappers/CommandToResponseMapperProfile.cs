@@ -8,7 +8,7 @@ namespace BizCover.Api.Cars.Mappers
     {
         public CommandToResponseMapperProfile()
         {
-            CreateMap<AddCarCommandResponse, CreateCarResponse>();
+            CreateMap<AddCarCommandResponse, CarResponse>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using BizCover.Repository.Cars;
 
 namespace BizCover.Api.Cars.Application.Seedwork
@@ -6,5 +7,6 @@ namespace BizCover.Api.Cars.Application.Seedwork
     public interface ICarService
     {
         Task<Car> AddCar(Car car);
+        Task Update(Car car);
     }
 }

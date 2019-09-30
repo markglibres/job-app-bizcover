@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AutoFixture;
 using BizCover.Repository.Cars;
 using Moq;
 using NUnit.Framework;
@@ -19,16 +20,7 @@ namespace BizCover.Api.Cars.Unit.Tests.Services
             MockRepository.Setup(r => r.Add(It.IsAny<Car>()))
                 .ReturnsAsync(_newCarId);
 
-            _newCarToAdd = new Car
-            {
-                Id = 0,
-                Make = "Ford",
-                Model = "Expedition",
-                Year = 2012,
-                Price = (decimal) 50000.00,
-                Colour = "Maroon",
-                CountryManufactured = "US"
-            };
+            _newCarToAdd = Fixture.Create<Car>();
         }
 
         protected override async Task ActAsync()
