@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6519315-00E7-4440-9BAB-21C997629265}"
 	ProjectSection(SolutionItems) = preProject
+		..\ApiDockerFile = ..\ApiDockerFile
+		..\docker-compose-test.yml = ..\docker-compose-test.yml
 		..\readme.md = ..\readme.md
 	EndProjectSection
 EndProject
@@ -14,7 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars", "BizCov
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3B8712A4-14E4-4E14-9514-36AD844E39BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Tests", "..\tests\BizCover.Api.Cars.Tests\BizCover.Api.Cars.Tests.csproj", "{16D21024-6930-468B-AB70-AC122968B896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Integration.Tests", "..\tests\BizCover.Api.Cars.Integration.Tests\BizCover.Api.Cars.Integration.Tests.csproj", "{298B10D8-F541-4ACC-A6F1-4732E5310088}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Unit.Tests", "..\tests\BizCover.Api.Cars.Unit.Tests\BizCover.Api.Cars.Unit.Tests.csproj", "{262DF3B0-9610-495B-B16E-B951F172D5F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,16 +34,21 @@ Global
 		{0B3A7157-9D67-41DF-9147-CDD450A85ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B3A7157-9D67-41DF-9147-CDD450A85ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B3A7157-9D67-41DF-9147-CDD450A85ED9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16D21024-6930-468B-AB70-AC122968B896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16D21024-6930-468B-AB70-AC122968B896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16D21024-6930-468B-AB70-AC122968B896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16D21024-6930-468B-AB70-AC122968B896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298B10D8-F541-4ACC-A6F1-4732E5310088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298B10D8-F541-4ACC-A6F1-4732E5310088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298B10D8-F541-4ACC-A6F1-4732E5310088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298B10D8-F541-4ACC-A6F1-4732E5310088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{16D21024-6930-468B-AB70-AC122968B896} = {3B8712A4-14E4-4E14-9514-36AD844E39BC}
+		{298B10D8-F541-4ACC-A6F1-4732E5310088} = {3B8712A4-14E4-4E14-9514-36AD844E39BC}
+		{262DF3B0-9610-495B-B16E-B951F172D5F5} = {3B8712A4-14E4-4E14-9514-36AD844E39BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDE3D7E5-2466-41D7-89D1-94A18909896B}

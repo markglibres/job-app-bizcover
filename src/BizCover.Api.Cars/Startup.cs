@@ -23,7 +23,7 @@ namespace BizCover.Api.Cars
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "My API", Version = "v1"}); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "BizCover Car API", Version = "v1"}); });
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddMediatR(typeof(AddCarCommandHandler).Assembly);
         }
@@ -32,7 +32,7 @@ namespace BizCover.Api.Cars
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"); });
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BizCover Car API V1"); });
 
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 

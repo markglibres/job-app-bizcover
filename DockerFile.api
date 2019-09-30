@@ -1,0 +1,18 @@
+FROM microsoft/dotnet:2.2-sdk AS build-api
+WORKDIR /app
+
+COPY ./src/ /app
+COPY ./tests/ /tests
+COPY ./packages/ /packages
+
+RUN dotnet test /tests/BizCover.Api.Cars.Unit.Tests
+RUN dotnet restore /app/BizCover.Api.Cars/BizCover.Api.Cars.csproj
+RUN dotnet publish /app/BizCover.Api.Cars/BizCover.Api.Cars.csproj -o /app/src/publish
+
+FROM microsoft/dotnet:2.2-aspnetcore-runtime
+WORKDIR /app
+COPY --from=build-api /app/src/publish /app
+
+EXPOSE 5000
+ENV ASPNETCORE_URLS http://*:5000
+ENTRYPOINT ["dotnet", "BizCover.Api.Cars.dll"]

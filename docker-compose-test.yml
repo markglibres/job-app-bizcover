@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  bizcover-car-api:
+    image: bizcover-car-api
+    build:
+      context: .
+      dockerfile: DockerFile.api
+    environment:
+      ASPNETCORE_ENVIRONMENT: "development"
+      
+    ports:
+      - "5000:5000"
+
+
+  bizcover-integration-test:
+    image: bizcover-integration-test
+    build:
+      context: .
+      dockerfile: DockerFile.integration
+    entrypoint: dotnet test
+    environment:
+      ASPNETCORE_ENVIRONMENT: "development"
+    depends_on:
+      - bizcover-car-api
+      
