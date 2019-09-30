@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -22,20 +23,19 @@ namespace BizCover.Api.Cars.Integration.Tests.Helpers
             return await _httpClient.PostAsync(_carsApiUrl, content);
         }
 
-        public async Task<HttpResponseMessage> GetCar(int carId)
-        {
-            return await _httpClient.GetAsync(_carsApiUrl + $"/{carId}");
-        }
-
-        public async Task<HttpResponseMessage> GetCars()
-        {
-            return await _httpClient.GetAsync(_carsApiUrl);
-        }
-
         public async Task<HttpResponseMessage> UpdateCar(int carId, object body)
         {
             var content = GetBody(body);
             return await _httpClient.PutAsync(_carsApiUrl + $"/{carId}", content);
+        }
+
+        public async Task<HttpResponseMessage> GetDiscount(params int[] carIds)
+        {
+            var ids = carIds
+                .Select(id => $"Ids={id}")
+                .ToList();
+
+            return await _httpClient.GetAsync(_carsApiUrl + $"?{string.Join("&", ids)}");
         }
 
         private static StringContent GetBody(object body)

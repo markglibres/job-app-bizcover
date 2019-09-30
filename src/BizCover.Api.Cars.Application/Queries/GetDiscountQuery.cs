@@ -4,7 +4,8 @@ using MediatR;
 
 namespace BizCover.Api.Cars.Application.Queries
 {
-    public class GetCarsQuery : IRequest<IEnumerable<CarQueryResponse>>
+    public class GetDiscountQuery : IRequest<GetDiscountQueryResponse>
     {
+        public IEnumerable<int> Ids { get; set; }
     }
 }

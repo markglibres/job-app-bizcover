@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using BizCover.Api.Cars.Application.Commands;
+using BizCover.Api.Cars.Application.Queries;
 using BizCover.Api.Cars.Dtos.Requests;
 using BizCover.Api.Cars.Dtos.Responses;
 using BizCover.Repository.Cars;
@@ -52,6 +53,18 @@ namespace BizCover.Api.Cars.Controllers
             await _mediator.Send(command);
 
             return Ok();
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(GetDiscountResponse), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorMessageResponse), (int) HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetDiscount([FromQuery] GetDiscountRequest request)
+        {
+            var query = _mapper.Map<GetDiscountQuery>(request);
+            var result = await _mediator.Send(query);
+            
+            var response = _mapper.Map<GetDiscountResponse>(result);
+            return Ok(response);
         }
     }
 }
