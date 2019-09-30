@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BizCover.Api.Cars.Application.Commands;
+using BizCover.Api.Cars.Application.Commands.Responses;
 using BizCover.Repository.Cars;
 
 namespace BizCover.Api.Cars.Application.Mappers
@@ -9,6 +10,7 @@ namespace BizCover.Api.Cars.Application.Mappers
         public CarMapperProfile()
         {
             CreateMap<AddCarCommand, Car>();
+            CreateMap<Car, AddCarCommandResponse>();
         }
     }
 }

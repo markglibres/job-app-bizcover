@@ -1,7 +1,6 @@
 ﻿namespace BizCover.Api.Cars.Dtos.Responses
 {
-    public class CreateCarResponse
+    public class CreateCarResponse : CarResponse
     {
-        public int Id { get; set; }
     }
 }

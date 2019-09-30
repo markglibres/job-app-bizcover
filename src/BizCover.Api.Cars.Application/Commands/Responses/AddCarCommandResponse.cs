@@ -1,7 +1,9 @@
-﻿namespace BizCover.Api.Cars.Application.Commands.Responses
+﻿using BizCover.Api.Cars.Application.Dtos;
+
+namespace BizCover.Api.Cars.Application.Commands.Responses
 {
-    public class AddCarCommandResponse
+    public class AddCarCommandResponse : CarDto
     {
-        public int Id { get; set; }
+        
     }
 }

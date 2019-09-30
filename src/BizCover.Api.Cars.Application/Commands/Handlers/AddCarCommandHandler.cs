@@ -24,8 +24,11 @@ namespace BizCover.Api.Cars.Application.Commands.Handlers
         public async Task<AddCarCommandResponse> Handle(AddCarCommand request, CancellationToken cancellationToken)
         {
             var car = _mapper.Map<Car>(request);
-            var carId = await _carService.AddCar(car);
-            return new AddCarCommandResponse { Id = carId };
+            var newCar = await _carService.AddCar(car);
+
+            var carResponse = _mapper.Map<AddCarCommandResponse>(newCar);
+            
+            return carResponse;
         }
     }
 }

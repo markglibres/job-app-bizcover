@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using AutoMapper;
 using BizCover.Api.Cars.Application.Commands;
 using BizCover.Api.Cars.Application.Queries;
 using BizCover.Api.Cars.Dtos.Requests;
@@ -15,10 +16,14 @@ namespace BizCover.Api.Cars.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
+        private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
-        public CarsController(IMediator mediator)
+        public CarsController(
+            IMapper mapper,
+            IMediator mediator)
         {
+            _mapper = mapper;
             _mediator = mediator;
             var repo = new CarRepository();
 
@@ -30,8 +35,11 @@ namespace BizCover.Api.Cars.Controllers
         [ProducesResponseType(typeof(ErrorMessageResponse), (int) HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> Add([FromBody] AddCarRequest request)
         {
-            var result = await _mediator.Send(new AddCarCommand());
-            return Ok(result);
+            var command = _mapper.Map<AddCarCommand>(request);
+            var result = await _mediator.Send(command);
+
+            var response = _mapper.Map<CreateCarResponse>(result);
+            return Ok(response);
         }
 
         [HttpGet]

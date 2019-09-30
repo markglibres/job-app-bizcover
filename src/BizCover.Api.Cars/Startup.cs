@@ -4,6 +4,7 @@ using BizCover.Api.Cars.Application.Commands.Handlers;
 using BizCover.Api.Cars.Application.Mappers;
 using BizCover.Api.Cars.Application.Seedwork;
 using BizCover.Api.Cars.Application.Services;
+using BizCover.Repository.Cars;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,7 @@ namespace BizCover.Api.Cars
             services.AddMediatR(typeof(AddCarCommandHandler).Assembly);
 
             services.AddTransient<ICarService, CarService>();
+            services.AddTransient<ICarRepository, CarRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

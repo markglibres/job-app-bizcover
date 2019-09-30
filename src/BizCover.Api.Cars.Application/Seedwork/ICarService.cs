@@ -5,6 +5,6 @@ namespace BizCover.Api.Cars.Application.Seedwork
 {
     public interface ICarService
     {
-        Task<int> AddCar(Car car);
+        Task<Car> AddCar(Car car);
     }
 }
