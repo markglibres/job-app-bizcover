@@ -11,15 +11,24 @@ services:
     ports:
       - "5000:5000"
 
-
+  bizcover-unit-test:
+    image: bizcover-unit-test
+    build:
+      context: .
+      dockerfile: DockerFile.tests
+    entrypoint: dotnet test /tests/BizCover.Api.Cars.Unit.Tests
+    depends_on:
+      - bizcover-car-api
+      
   bizcover-integration-test:
     image: bizcover-integration-test
     build:
       context: .
-      dockerfile: DockerFile.integration
-    entrypoint: dotnet test
+      dockerfile: DockerFile.tests
+    entrypoint: dotnet test /tests/BizCover.Api.Cars.Integration.Tests
     environment:
-      ASPNETCORE_ENVIRONMENT: "development"
+      ASPNETCORE_ENVIRONMENT: "docker"
+      CarsApiUrl: "http://bizcover-car-api:5000/api/cars"
     depends_on:
-      - bizcover-car-api
+      - bizcover-unit-test
       

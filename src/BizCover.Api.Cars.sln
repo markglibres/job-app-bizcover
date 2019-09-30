@@ -5,8 +5,9 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6519315-00E7-4440-9BAB-21C997629265}"
 	ProjectSection(SolutionItems) = preProject
-		..\ApiDockerFile = ..\ApiDockerFile
 		..\docker-compose-test.yml = ..\docker-compose-test.yml
+		..\DockerFile.api = ..\DockerFile.api
+		..\DockerFile.integration = ..\DockerFile.integration
 		..\readme.md = ..\readme.md
 	EndProjectSection
 EndProject
@@ -19,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Integration.Tests", "..\tests\BizCover.Api.Cars.Integration.Tests\BizCover.Api.Cars.Integration.Tests.csproj", "{298B10D8-F541-4ACC-A6F1-4732E5310088}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Unit.Tests", "..\tests\BizCover.Api.Cars.Unit.Tests\BizCover.Api.Cars.Unit.Tests.csproj", "{262DF3B0-9610-495B-B16E-B951F172D5F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BizCover.Api.Cars.Tests", "..\tests\BizCover.Api.Cars.Tests\BizCover.Api.Cars.Tests.csproj", "{E06C5774-1B5A-45AD-ADAF-474A0E1CAC88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +45,10 @@ Global
 		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{262DF3B0-9610-495B-B16E-B951F172D5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E06C5774-1B5A-45AD-ADAF-474A0E1CAC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E06C5774-1B5A-45AD-ADAF-474A0E1CAC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E06C5774-1B5A-45AD-ADAF-474A0E1CAC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E06C5774-1B5A-45AD-ADAF-474A0E1CAC88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +56,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{298B10D8-F541-4ACC-A6F1-4732E5310088} = {3B8712A4-14E4-4E14-9514-36AD844E39BC}
 		{262DF3B0-9610-495B-B16E-B951F172D5F5} = {3B8712A4-14E4-4E14-9514-36AD844E39BC}
+		{E06C5774-1B5A-45AD-ADAF-474A0E1CAC88} = {3B8712A4-14E4-4E14-9514-36AD844E39BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FDE3D7E5-2466-41D7-89D1-94A18909896B}

@@ -9,7 +9,7 @@ namespace BizCover.Api.Cars.Application.Commands.Handlers
     {
         public Task<AddCarCommandResponse> Handle(AddCarCommand request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new AddCarCommandResponse());
+            return Task.FromResult(new AddCarCommandResponse{ Id = 1 });
         }
     }
 }

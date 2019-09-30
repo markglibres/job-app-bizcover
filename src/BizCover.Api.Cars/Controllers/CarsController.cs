@@ -31,7 +31,7 @@ namespace BizCover.Api.Cars.Controllers
         public async Task<IActionResult> Add([FromBody] AddCarRequest request)
         {
             var result = await _mediator.Send(new AddCarCommand());
-            return Ok(result);
+            return Accepted(result);
         }
 
         [HttpGet]
@@ -60,7 +60,7 @@ namespace BizCover.Api.Cars.Controllers
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCarRequest request)
         {
             var result = await _mediator.Send(new UpdateCarCommand());
-            return Ok(result);
+            return Accepted(result);
         }
     }
 }
