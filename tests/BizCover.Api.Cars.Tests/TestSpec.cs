@@ -1,4 +1,7 @@
 ﻿using System.Threading.Tasks;
+using AutoFixture;
+using AutoFixture.AutoMoq;
+using AutoMapper;
 using BizCover.Api.Cars.Tests.Helpers;
 using NUnit.Framework;
 
@@ -7,6 +10,7 @@ namespace BizCover.Api.Cars.Tests
     public abstract class TestSpec
     {
         protected readonly BizCoverSettings Config;
+        protected IFixture Fixture;
 
         protected TestSpec()
         {
@@ -16,6 +20,9 @@ namespace BizCover.Api.Cars.Tests
         [SetUp]
         protected async Task Initialize()
         {
+            Fixture = new Fixture().Customize(new AutoMoqCustomization());
+            Fixture.Register(() => MapperHelper.Mapper);
+
             Arrange();
             await ArrangeAsync();
 

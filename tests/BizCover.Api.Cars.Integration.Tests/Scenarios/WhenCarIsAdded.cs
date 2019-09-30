@@ -35,10 +35,10 @@ namespace BizCover.Api.Cars.Integration.Tests.Seedwork
         }
 
         [Test]
-        public void Should_Return_Accepted_Status()
+        public void Should_Return_Ok_Status()
         {
             Assert.True(_carAddedResult.IsSuccessStatusCode);
-            Assert.AreEqual(HttpStatusCode.Accepted, _carAddedResult.StatusCode);
+            Assert.AreEqual(HttpStatusCode.OK, _carAddedResult.StatusCode);
         }
 
         [Test]

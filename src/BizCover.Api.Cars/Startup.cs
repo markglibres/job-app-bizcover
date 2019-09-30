@@ -1,5 +1,9 @@
 ﻿using System.Reflection;
+using AutoMapper;
 using BizCover.Api.Cars.Application.Commands.Handlers;
+using BizCover.Api.Cars.Application.Mappers;
+using BizCover.Api.Cars.Application.Seedwork;
+using BizCover.Api.Cars.Application.Services;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,10 +26,13 @@ namespace BizCover.Api.Cars
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup), typeof(CarMapperProfile));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "BizCover Car API", Version = "v1"}); });
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddMediatR(typeof(AddCarCommandHandler).Assembly);
+
+            services.AddTransient<ICarService, CarService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

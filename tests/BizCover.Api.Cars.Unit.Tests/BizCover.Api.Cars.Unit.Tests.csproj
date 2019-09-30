@@ -7,13 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+    <PackageReference Include="AutoFixture.AutoMoq" Version="4.11.0" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="nunit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\BizCover.Api.Cars.Application\BizCover.Api.Cars.Application.csproj" />
     <ProjectReference Include="..\BizCover.Api.Cars.Tests\BizCover.Api.Cars.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BizCover.Repository.Cars">
+      <HintPath>..\..\packages\BizCover.Repository.Cars.1.0.0\lib\netstandard1.2\BizCover.Repository.Cars.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

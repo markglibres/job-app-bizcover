@@ -31,7 +31,7 @@ namespace BizCover.Api.Cars.Controllers
         public async Task<IActionResult> Add([FromBody] AddCarRequest request)
         {
             var result = await _mediator.Send(new AddCarCommand());
-            return Accepted(result);
+            return Ok(result);
         }
 
         [HttpGet]

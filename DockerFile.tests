@@ -1,6 +1,12 @@
 FROM microsoft/dotnet:2.2-sdk AS build-api
 WORKDIR /app
 
-COPY ./src/ /app
+COPY ./src/ /src
 COPY ./tests/ /tests
+COPY ./packages/ /packages
 
+RUN dotnet restore /tests/BizCover.Api.Cars.Unit.Tests
+RUN dotnet build /tests/BizCover.Api.Cars.Unit.Tests
+
+RUN dotnet restore /tests/BizCover.Api.Cars.Integration.Tests
+RUN dotnet build /tests/BizCover.Api.Cars.Integration.Tests
