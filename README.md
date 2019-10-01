@@ -7,11 +7,11 @@ A simple programming exercise for BizCover's Car Api
 ## Build, Run and Test API with docker compose
 1. Open console 
 2. Go to project root folder 
-3. execute command to build and unit tests
+3. execute command to build
 ```
  docker-compose -f .\docker-compose-test.yml build
 ``` 
-4. execute command to spin up api and run integration tests (give some time for tests to complete)
+4. execute command to spin up api and run unit and integration tests (give some time for tests to complete)
 ```
  docker-compose -f .\docker-compose-test.yml up
 ``` 
