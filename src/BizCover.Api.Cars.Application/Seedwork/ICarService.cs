@@ -8,5 +8,7 @@ namespace BizCover.Api.Cars.Application.Seedwork
     {
         Task<Car> AddCar(Car car);
         Task Update(Car car);
+        Task<IEnumerable<Car>> GetCars(params int[] carIds);
+        decimal CalculateDiscount(IEnumerable<Car> cars);
     }
 }

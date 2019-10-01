@@ -35,6 +35,10 @@ namespace BizCover.Api.Cars
 
             services.AddTransient<ICarService, CarService>();
             services.AddTransient<ICarRepository, CarRepository>();
+
+            services.AddTransient<ICarDiscountCalculator, TotalPriceDiscountCalculator>();
+            services.AddTransient<ICarDiscountCalculator, TotalCarsDiscountCalculator>();
+            services.AddTransient<ICarDiscountCalculator, OldCarDiscountCalculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
