@@ -1,5 +1,5 @@
-# job-app-bizcover
-A simple programming exercise for BizCover's Car Shop
+# BizCover Car API
+A simple programming exercise for BizCover's Car Api
 
 ## Pre-requisites 
 * DotNetCore >= 2.2 
