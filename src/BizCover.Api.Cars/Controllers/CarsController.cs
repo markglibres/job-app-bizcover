@@ -5,7 +5,6 @@ using BizCover.Api.Cars.Application.Commands;
 using BizCover.Api.Cars.Application.Queries;
 using BizCover.Api.Cars.Dtos.Requests;
 using BizCover.Api.Cars.Dtos.Responses;
-using BizCover.Repository.Cars;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,9 +23,6 @@ namespace BizCover.Api.Cars.Controllers
         {
             _mapper = mapper;
             _mediator = mediator;
-            var repo = new CarRepository();
-
-            var car = new Car();
         }
 
         [HttpPost]
@@ -62,7 +58,7 @@ namespace BizCover.Api.Cars.Controllers
         {
             var query = _mapper.Map<GetDiscountQuery>(request);
             var result = await _mediator.Send(query);
-            
+
             var response = _mapper.Map<GetDiscountResponse>(result);
             return Ok(response);
         }

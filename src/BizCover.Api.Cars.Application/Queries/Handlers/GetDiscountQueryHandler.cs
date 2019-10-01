@@ -9,7 +9,12 @@ namespace BizCover.Api.Cars.Application.Queries.Handlers
     {
         public Task<GetDiscountQueryResponse> Handle(GetDiscountQuery request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new GetDiscountQueryResponse());
+            return Task.FromResult(new GetDiscountQueryResponse
+            {
+                DiscountPrice = 17000,
+                OriginalPrice = 150000,
+                TotalPrice = 133000
+            });
         }
     }
 }

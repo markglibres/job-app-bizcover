@@ -1,6 +1,6 @@
-﻿namespace BizCover.Api.Cars.Dtos.Responses
+﻿namespace BizCover.Api.Cars.Integration.Tests.Dtos
 {
-    public class GetDiscountResponse
+    public class CarsApiDiscountResponse
     {
         public decimal OriginalPrice { get; set; }
         public decimal DiscountPrice { get; set; }
